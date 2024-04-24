@@ -13,7 +13,3 @@
 ## Used technologies
 - [k3s](https://k3s.io/)
 - [mongodb-kubernets-operator](https://github.com/mongodb/mongodb-kubernetes-operator)
-
-## Documentation
-- [FIB VirTech Documentation](https://www.fib.upc.edu/sites/fib/files/documents/fib/serveis-tic/serveistic-documentacio-us-nuvol-privat-servei-virtech.pdf)
-- [k3s documentation](https://docs.k3s.io)
