@@ -1,10 +1,10 @@
 # Cluster setup
 **Assets:**
-| id           | hostname  | ip         |
-|--------------|-----------|------------|
-| `master-node`  | zubat     | 10.4.41.57 |
-| `node-agent01` | gloom     | 10.4.41.60 |
-| `node-agent02` | vileplume | 10.4.41.61 |
+| id             | hostname               | ip         |
+|----------------|------------------------|------------|
+| `master-node`  | zubat.fib.upc.edu      | 10.4.41.57 |
+| `node-agent01` | gloom.fib.upc.edu      | 10.4.41.60 |
+| `node-agent02` | vileplume.fib.upc.edu  | 10.4.41.61 |
 
 ![Virtech FIB](./img/vms.png)
 

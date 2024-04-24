@@ -127,6 +127,12 @@ We can access our web application via any cluster nodes IP and `NodePort` will r
 - **worker:** http://10.4.41.60:32333/
 - **worker:** http://10.4.41.61:32333/
 
+Alternatively, we could use hostnames:
+- **node-master:** http://zubat.fib.upc.edu:32333/
+- **worker:** http://gloom.fib.upc.edu:32333/
+- **worker:** http://vileplume.fib.upc.edu:32333/
+
+
 ### 4.1) Deleting pods
 We can try to delete a pod and Kubernetes will automatically create another one to replace it until the number of `replicas` is satisfied.
 
@@ -143,5 +149,5 @@ kubectl delete pods <pod-name>
 If we run again `kubectl get pods` we will notice that Kubernetes will create another pod for us automatically.
 
 ## References
-[Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+[Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)  
 [Services - NodePort](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)
