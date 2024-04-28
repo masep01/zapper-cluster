@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webapp-container
-        image: masep01/zapper:latest
+        image: masep01/zapper-web:latest
         ports:
         - containerPort: 3000
       imagePullSecrets:

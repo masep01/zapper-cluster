@@ -1,0 +1,7 @@
+kubectl create configmap create-db-configmap --from-file=./docker-image/init.js
+
+mongo admin -u root -p password
+
+use zapper;
+db.users.insert({username: "josep", password: "benji", createdAt: "2024"});
+db.users.find();
