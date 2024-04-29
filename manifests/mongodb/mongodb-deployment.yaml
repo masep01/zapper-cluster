@@ -17,6 +17,8 @@ spec:
       labels:
         app: mongo
     spec:
+      nodeSelector:
+        type: mongoer
       containers:
       - image: mongo:4.4
         name: mongo
@@ -64,4 +66,3 @@ spec:
       - name: "init-database"
         configMap:
           name: create-db-configmap
-        
