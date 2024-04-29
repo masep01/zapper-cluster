@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zapper-api
+  template:
+    metadata:
+      labels:
+        app: zapper-api
+    spec:
+      nodeSelector:
+        type: api
+      containers:
+      - name: api-container
+        image: masep01/zapper-api:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: registry-secret
