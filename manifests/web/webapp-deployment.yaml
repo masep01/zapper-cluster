@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webapp-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: zapper-webapp
@@ -12,6 +12,8 @@ spec:
       labels:
         app: zapper-webapp
     spec:
+      nodeSelector:
+        type: mongoer
       containers:
       - name: webapp-container
         image: masep01/zapper-web:latest
