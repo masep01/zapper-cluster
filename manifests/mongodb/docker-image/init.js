@@ -1,6 +1,12 @@
 db.createCollection("users");
+db.createUser({
+  user: "root",
+  pwd: "password",
+  roles: ["readWrite"]
+});
+
 db.users.insert({
-  username: "zapper",
-  password: "root",
+  username: "josep",
+  password: "eljefe",
   createdAt: new Date()
 });
