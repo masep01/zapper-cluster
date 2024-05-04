@@ -1,7 +1,8 @@
 db.createCollection("users");
+
 db.createUser({
   user: "root",
-  pwd: "password",
+  pwd: "elnano33!",
   roles: ["readWrite"]
 });
 
