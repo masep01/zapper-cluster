@@ -42,6 +42,11 @@ Now we need to upload our image to a repository and make it accessible from our 
 - An account in a Docker Registry like [DockerHub](https://hub.docker.com/).
 - A repository in that Registry
 
+To push our builded image:
+```docker
+docker push <repo>/<image:tag>
+```
+
 <br>
 
 The next step is to generate a secret to permit Kubernetes deployments to pull images from our repository.
@@ -82,7 +87,7 @@ spec:
     spec:
       containers:
       - name: webapp-container
-        image: masep01/zapper:latest
+        image: masep01/zapper-web:latest
         ports:
         - containerPort: 3000
       imagePullSecrets:

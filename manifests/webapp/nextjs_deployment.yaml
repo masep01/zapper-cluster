@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zapper-webapp
+  template:
+    metadata:
+      labels:
+        app: zapper-webapp
+    spec:
+      containers:
+      - name: webapp-container
+        image: masep01/zapper:latest
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: registry-secret
