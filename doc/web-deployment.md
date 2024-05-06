@@ -119,6 +119,8 @@ spec:
 
 We can see that our application will be accessible from any IP of the cluster nodes and the port `32333`.
 
+**[!] Disclaimer**: now `nodeport_service.yaml` is renamed to `webapp-service`-
+
 ### 3.3) Apply changes
 We can now apply the changes by running:
 ```bash
