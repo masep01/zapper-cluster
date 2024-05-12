@@ -1,3 +1,4 @@
-cert.key
-cert.csr
-cert.crt
+*.key
+*.csr
+*.crt
+
