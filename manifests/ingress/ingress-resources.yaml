@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zubat-ingress
+spec:
+  tls:
+  - hosts:
+    - zubat.fib.upc.edu
+    secretName: zubat-tls-secret
+  rules:
+  - host: zubat.fib.upc.edu
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: api-service
+            port:
+              number: 8080
+  - host: zubat.fib.upc.edu
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: webapp-service
+            port:
+              number: 3000
