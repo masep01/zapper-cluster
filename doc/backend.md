@@ -406,6 +406,34 @@ volumes:
 ```
 
 ## 3.0) API deployment
+The last step is to deploy our API deployment to process requests and answer the frontend.
+Check out the manifest `api-deployment.yaml`:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zapper-api
+  template:
+    metadata:
+      labels:
+        app: zapper-api
+    spec:
+      nodeSelector:
+        type: api
+      containers:
+      - name: api-container
+        image: masep01/zapper-api:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: registry-secret
+```
+As we can see, the deployment pulls `zapper-api` image, and exposes port `8080` since the application accepts requests locally in port `8080`.
 
 ## Improvements
 ## Troubleshooting
