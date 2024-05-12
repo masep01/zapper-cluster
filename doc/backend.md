@@ -436,6 +436,8 @@ spec:
 As we can see, the deployment pulls `zapper-api` image, and exposes port `8080` since the application accepts requests locally in port `8080`.
 
 ## Improvements
+See [Ingress Controller](./ingress.md)
+
 ## Troubleshooting
 ### Mongo 4.4
 We have found that Mongo versions <= `5.0` are incompatible with our machines due to CPU instructions issues, so the solution was to perform a downgrade to version `4.4`.
