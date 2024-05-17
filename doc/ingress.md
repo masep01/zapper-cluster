@@ -33,11 +33,7 @@ As explained above, Ingress will route traffic based on path rules.
 ![](./img/architecture2.png)
 
 ## Ingress configuration
-We will install the controller via **Helm charts**.
-```bash
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm install my-ingress-nginx ingress-nginx/ingress-nginx
-```
+We will use [**Traefik**](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) as our Ingress Controller.
 
 Next, generate a self-signed certificate for our HTTPS connections.
 1) Generate the private key.
@@ -69,10 +65,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - zubat.fib.upc.edu
+    - gloom.fib.upc.edu
     secretName: zubat-tls-secret
   rules:
-  - host: zubat.fib.upc.edu
+  - host: gloom.fib.upc.edu
     http:
       paths:
       - path: /api
@@ -82,9 +78,6 @@ spec:
             name: api-service
             port:
               number: 8080
-  - host: zubat.fib.upc.edu
-    http:
-      paths:
       - path: /
         pathType: Prefix
         backend:
@@ -102,9 +95,9 @@ Now, access to:
 
 Is no longer permitted.
 
-A unique hostname:port [zubat.fib.upc.edu:443] is reponsible for handling all traffic:
--  Webapp: https://zubat.fib.upc.edu/
--  API: https://zubat.fib.upc.edu/api
+A unique hostname:port [gloom.fib.upc.edu:443] is reponsible for handling all traffic:
+-  Webapp: https://gloom.fib.upc.edu/
+-  API: https://gloom.fib.upc.edu/api
 
 Connection is ciphered by HTTPS.
 
