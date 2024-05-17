@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - zubat.fib.upc.edu
+    - gloom.fib.upc.edu
     secretName: zubat-tls-secret
   rules:
-  - host: zubat.fib.upc.edu
+  - host: gloom.fib.upc.edu
     http:
       paths:
       - path: /api
@@ -18,9 +18,6 @@ spec:
             name: api-service
             port:
               number: 8080
-  - host: zubat.fib.upc.edu
-    http:
-      paths:
       - path: /
         pathType: Prefix
         backend:
