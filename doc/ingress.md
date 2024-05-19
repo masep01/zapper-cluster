@@ -11,7 +11,7 @@ So we need to use an **Ingress Controller Manager**.
 
 > In order for the Ingress resource to work, the cluster must have an ingress controller running. 
 
-We will be using `NGINX Ingress Controller`.
+We will be using `Traefik Ingress Controller`, which is installed by default in `k3s` enviornments.
 
 In other words, now our `NodePort` services will disappear and `Ingress` will recieve all traffic and it will be routed based on previous defined rules. 
 
@@ -19,7 +19,7 @@ Translated to our cluster, we need to perform 2 changes:
 1) `api-service` and `webapp-services` will be now `ClusterIP` services instead of `NodePort`, since we don't want them to be accessible via the defined ports (32333 and 32334).  
 Now, all traffic will be sent to port 443 (HTTPS).
 
-2) Deploy `NGINX Ingress Controller` and configure it to send traffic to the previous services.
+2) Deploy `Ingress Controller` and configure it to send traffic to the previous services.
 
 ## New architecture
 As explained above, Ingress will route traffic based on path rules. 
