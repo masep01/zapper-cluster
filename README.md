@@ -10,4 +10,3 @@ This repository contains all source code and documentation for the cluster confi
 
 **Author:** Josep Martínez
 
-Special thanks to my teammates: [Santi Oliver](https://github.com/surinyach), [Adrià Martínez](https://github.com/AdriMM26) and [Martín López](https://github.com/TheReal12Martin).
